@@ -9,7 +9,7 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
         line-height: 1.6;
         color: #000;
-        background-color: #dbdbdb;
+        background-color: #eddcc7;
         max-width: 600px;
         margin: 0 auto;
         padding: 20px;
@@ -17,22 +17,63 @@
       a {
         color: #000;
       }
+      .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+      }
+      
+      .sidenav b {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 21px;
+        color: #f0f0f0;
+        display: block;
+      }
+      
+      .sidenav b:hover {
+      	color: #d4a66e;
+      }
+      
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+      }
     </style>
   </head>
   <body>
-    <h2>Hello! My name is Albert Yeh.</h2>
+    <div class="sidenav">
+      <b href="#">Main</b>
+      <b href="#">Projects</b>
+      <b href="#">About Me</b>
+      <b href="#">Contact</b>
+    </div>
+    <div class="main">
+      <h2>Hello! My name is Albert Yeh.</h2>
 
-    <p>I'm a recent graduate from the University of Washington with a Bachelor's degree in Computer Science. I am an aspiring game developer, but I also want experience in all software development positions as well.</p>
+      <p>I'm a recent graduate from the University of Washington with a Bachelor's degree in Computer Science. I am an aspiring game developer, but I also want experience in all software development positions as well.</p>
 
-    <p>While learning computer science in university, I developed a strong foundation and passion for computer science. I've demonstrated the understanding of computer technology principles and skills in many fields such as security, distributed systems, human-computer interaction, game development, AI, and more, through coursework and projects.</p>
+      <p>While learning computer science in university, I developed a strong foundation and passion for computer science. I've demonstrated the understanding of computer technology principles and skills in many fields such as security, distributed systems, human-computer interaction, game development, AI, and more, through coursework and projects.</p>
 
-    <p>I have experience working as a former mentor for the UW Allen School of Computer Science and Engineering’s Diversity and Access program, where my team and I led a course for students from economically disadvantaged backgrounds and taught skills for students to be successful within the field of computer science.</p>
+      <p>I have experience working as a former mentor for the UW Allen School of Computer Science and Engineering’s Diversity and Access program, where my team and I led a course for students from economically disadvantaged backgrounds and taught skills for students to be successful within the field of computer science.</p>
 
-    <p>I am eager to bring my skills and enthusiasm to the software development industry, so feel free to reach out about anything!</p>
-
-    <p>
-        <a href="https://www.linkedin.com/in/al-yeh">LinkedIn</a><br>
-    </p>
+      <p>I am eager to bring my skills and enthusiasm to the software development industry, so feel free to reach out about anything!</p>
+     </div>
 
   </body>
 </html>
