@@ -23,20 +23,12 @@ body {
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav b {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
   font-size: 21px;
   color: #f0f0f0;
   display: block;
 }
 
-.sidenav b:hover {
+.sidenav a:hover {
   color: #d4a66e;
 }
 
@@ -46,11 +38,11 @@ body {
   padding: 0px 10px;
 }
 
-.main links {
+.main a {
   color: #000000;
   text-decoration: underline;
 }
 
-.main links:hover {
+.main a:hover {
   color: #d4a66e;
 }
