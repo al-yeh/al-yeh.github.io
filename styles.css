@@ -17,7 +17,7 @@ body {
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .sidenav a {
@@ -74,3 +74,52 @@ body {
 .project img.right { float: right; margin-left: 20px; }
 
 .project .desc { overflow: hidden; }
+
+/* Mobile nav toggle */
+#nav-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 3000;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  padding: 6px;
+  line-height: 1;
+}
+
+.sidenav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease;
+  z-index: 2500;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  #nav-toggle { display: block; }
+
+  .sidenav {
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+    width: 240px;
+    z-index: 2600;
+    height: 100%;
+  }
+
+  .sidenav.open { transform: translateX(0); }
+
+  .sidenav.open + .sidenav-backdrop,
+  .sidenav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .main { margin-left: 0; padding-top: 48px; }
+}

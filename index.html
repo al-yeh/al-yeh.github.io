@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="sidenav">
+    <button id="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="sidenav" id="sidenav" aria-hidden="true">
       <a href="/">Main</a>
       <a href="/projects.html">Projects</a>
       <a href="/about-me.html">About Me</a>
       <a href="/contact.html">Contact</a>
-    </div>
+    </nav>
+
+    <div id="sidenav-backdrop" class="sidenav-backdrop" aria-hidden="true"></div>
+
     <div class="main">
       <h2>Hello! My name is Albert Yeh.</h2>
 
@@ -27,5 +31,29 @@
       <p>I am eager to bring my skills and enthusiasm to the software development industry, so feel free to reach out about anything!</p>
     </div>
 
+    <script>
+      (function () {
+        const toggle = document.getElementById('nav-toggle');
+        const sidenav = document.getElementById('sidenav');
+        const backdrop = document.getElementById('sidenav-backdrop');
+
+        function setOpen(open) {
+          sidenav.classList.toggle('open', open);
+          backdrop.classList.toggle('open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+          sidenav.setAttribute('aria-hidden', String(!open));
+          if (open) {
+            const first = sidenav.querySelector('a');
+            if (first) first.focus();
+          }
+        }
+
+        if (toggle && sidenav && backdrop) {
+          toggle.addEventListener('click', () => setOpen(!sidenav.classList.contains('open')));
+          backdrop.addEventListener('click', () => setOpen(false));
+          document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+        }
+      })();
+    </script>
   </body>
 </html>
