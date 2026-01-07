@@ -46,3 +46,31 @@ body {
 .main a:hover {
   color: #d4a66e;
 }
+
+/* Projects layout */
+.project {
+  overflow: auto; /* contains floats */
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.project::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.project h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+
+.project img {
+  width: 275px;
+  padding: 20px;
+}
+
+.project img.left { float: left; margin-right: 20px; }
+.project img.right { float: right; margin-left: 20px; }
+
+.project .desc { overflow: hidden; }
